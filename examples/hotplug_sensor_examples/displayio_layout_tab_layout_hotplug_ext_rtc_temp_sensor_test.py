@@ -203,8 +203,8 @@ myVars.write("pge4_lbl_dflt", "The fourth page is where it's at")
 myVars.write("online_time_present", False)
 myVars.write("temp_in_REPL", False)
 myVars.write("old_temp", 0.00)
-myVars.write("use_txt_in_month", True)
-myVars.write("use_usa_notation", True)
+myVars.write("use_txt_in_month", True)  # If True e.g.: May-16-2022, False: 2022-May-16
+myVars.write("use_usa_notation", False)  # If True e.g.: 05-16-2022, False: 2022-05-16
 myVars.write("use_ntp", False)
 myVars.write("content_sensor_idx", None)
 myVars.write("temp_in_fahrenheit", False)
@@ -225,7 +225,6 @@ display.rotation = 0
 main_group = displayio.Group()
 display.show(main_group)
 
-# fon.gvars bitmap_font.load_font("fonts/Helvetica-Bold-16.bdf")
 font_arial = bitmap_font.load_font("/fonts/Arial-16.bdf")
 font_term = terminalio.FONT
 
@@ -491,7 +490,7 @@ def get_temp():
                         pge4_lbl2.text = myVars.read("t0")
                         pge4_lbl3.text = t
                         # if not my_debug:
-                        # print("pge4_lbl.tex.gvars {}".format(pge4_lbl.text))
+                        # print("pge4_lbl.text = {}".format(pge4_lbl.text))
                         # time.sleep(2)
                         RetVal = True
                 else:
